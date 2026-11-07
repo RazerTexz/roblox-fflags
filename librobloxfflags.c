@@ -37,6 +37,7 @@ static void* start_routine(void*) {
         }
     }
 
+    dlclose(handle);
     return nullptr;
 }
 
