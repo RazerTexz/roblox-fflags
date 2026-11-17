@@ -4,4 +4,4 @@ librobloxfflags.so: librobloxfflags.o
 	$(CLANG) -shared -s -o $@ $^
 
 %.o: %.c
-	$(CLANG) -std=c23 -O2 -fPIC -o $@ -c $<
+	$(CLANG) -std=c23 -O2 -fPIC -c -o $@ $<
