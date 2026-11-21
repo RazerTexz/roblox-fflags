@@ -1,7 +1,5 @@
 # Roblox FFlags
 
-An Android shared library to override any Roblox FFlag.
-
 ## Installation
 
 1. Put [librobloxfflags.so](https://github.com/RazerTexz/roblox-fflags/actions/workflows/build.yaml) in `lib/arm64-v8a/`.
