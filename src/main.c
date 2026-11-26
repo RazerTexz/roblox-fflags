@@ -41,7 +41,7 @@ static void* thread_func(void* arg) {
     return nullptr;
 }
 
-[[gnu::constructor]] static void start() {
+[[gnu::constructor]] static void constructor() {
     pthread_t thread_id;
     if (pthread_create(&thread_id, nullptr, thread_func, nullptr) == 0) {
         pthread_detach(thread_id);
