@@ -1,7 +1,13 @@
-C64 = $(ANDROID_NDK_HOME)/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android21-clang
+SRCS = main.c
 
-librobloxfflags.so: src/main.o
-	$(C64) -shared -s $^ -o $@
+CF = -c -std=c23 -O2 -fPIC
+LF = -shared -s
 
-%.o: %.c
-	$(C64) -c -std=c23 -O2 -fPIC $^ -o $@
+CP = $(ANDROID_NDK_LATEST_HOME)/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android21-clang 
+
+build/librobloxfflags.so: $(SRCS:%.c=build/%.o)
+	$(CP) $(LF) $^ -o $@
+
+build/%.o: src/%.c
+	mkdir -p $(dir $@)
+	$(CP) $(CF) $< -o $@
